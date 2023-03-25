@@ -12,31 +12,6 @@ import StarIcon from '@mui/icons-material/StarBorder';
 
 const tiers = [
     {
-      title: 'Free',
-      price: '0',
-      description: [
-        '10 users included',
-        '2 GB of storage',
-        'Help center access',
-        'Email support',
-      ],
-      buttonText: 'Sign up for free',
-      buttonVariant: 'outlined',
-    },
-    {
-      title: 'Pro',
-      subheader: 'Most popular',
-      price: '15',
-      description: [
-        '20 users included',
-        '10 GB of storage',
-        'Help center access',
-        'Priority email support',
-      ],
-      buttonText: 'Get started',
-      buttonVariant: 'contained',
-    },
-    {
       title: 'Enterprise',
       price: '30',
       description: [
@@ -50,7 +25,6 @@ const tiers = [
     },
 ];
   
-
 const Posts = (props) => {
 	const { posts } = props;
 	if (!posts || posts.length === 0) return <p>Can not find any posts, sorry</p>;
@@ -100,12 +74,12 @@ const Posts = (props) => {
                     </Typography>
                   </Box>
                   <ul>
-                    {tier.description.map((line) => (
+                    {tier.description.map((line,key) => (
                       <Typography
                         component="li"
                         variant="subtitle1"
                         align="center"
-                        key={line}
+                        key={key}
                       >
                         {line}
                       </Typography>
